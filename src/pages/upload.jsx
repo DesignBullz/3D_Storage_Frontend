@@ -287,7 +287,7 @@ function Upload() {
     formData.append("file2", file2);
 
     try {
-      await axios.post("http://localhost:8080/upload", formData, {
+      await axios.post("http://srv645874.hstgr.cloud:8080/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

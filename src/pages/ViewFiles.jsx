@@ -320,7 +320,9 @@ function ViewFiles() {
   useEffect(() => {
     const fetchIndustries = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/industries");
+        const response = await axios.get(
+          "http://srv645874.hstgr.cloud:8080/industries"
+        );
         setIndustries(response.data.industries);
         // Store industries in localStorage
         localStorage.setItem(
@@ -360,9 +362,13 @@ function ViewFiles() {
 
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:8080/uploads", {
-        params: { design, front_depth, industry },
-      });
+
+      const response = await axios.get(
+        "http://srv645874.hstgr.cloud:8080/uploads",
+        {
+          params: { design, front_depth, industry },
+        }
+      );
       setFiles(response.data.uploads);
       // Store files in localStorage
       localStorage.setItem("files", JSON.stringify(response.data.uploads));

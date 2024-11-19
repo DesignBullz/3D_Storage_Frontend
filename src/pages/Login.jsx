@@ -116,10 +116,13 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://srv645874.hstgr.cloud:8080/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (response.data.token) {
         // Store the token in localStorage or sessionStorage
