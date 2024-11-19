@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Upload from "./pages/Upload.jsx";
+import Upload from "./pages/upload.jsx";
 import ViewFiles from "./pages/ViewFiles.jsx";
 import AdminPanel from "./pages/AdminPanel.jsx";
 import Login from "./pages/Login.jsx";
