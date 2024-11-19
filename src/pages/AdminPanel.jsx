@@ -373,8 +373,8 @@ import {
   FaSearch,
   FaTimesCircle,
 } from "react-icons/fa";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 
 function AdminPanel() {
   const [files, setFiles] = useState([]);
