@@ -152,7 +152,7 @@ function Signup() {
 
     // Make the API call
     try {
-      const response = await fetch("http://srv645874.hstgr.cloud:8080/signup", {
+      const response = await fetch("http://82.112.227.244:8080/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

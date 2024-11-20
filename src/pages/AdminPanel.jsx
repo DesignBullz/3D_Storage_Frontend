@@ -395,9 +395,7 @@ function AdminPanel() {
   const fetchFiles = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(
-        "http://srv645874.hstgr.cloud:8080/uploads"
-      );
+      const response = await axios.get("http://82.112.227.244:8080/uploads");
       setFiles(response.data.uploads);
     } catch (error) {
       setErrorMessage("Error fetching files.");
@@ -409,9 +407,7 @@ function AdminPanel() {
   // Fetch unique industries for the dropdown
   const fetchIndustries = async () => {
     try {
-      const response = await axios.get(
-        "http://srv645874.hstgr.cloud:8080/industries"
-      );
+      const response = await axios.get("http://82.112.227.244:8080/industries");
       setIndustries(response.data.industries);
     } catch (error) {
       console.error("Error fetching industries:", error);
@@ -426,9 +422,7 @@ function AdminPanel() {
   // Handle file deletion by fileNumber
   const handleDelete = async (fileNumber) => {
     try {
-      await axios.delete(
-        `http://srv645874.hstgr.cloud:8080/uploads/${fileNumber}`
-      );
+      await axios.delete(`http://82.112.227.244:8080/uploads/${fileNumber}`);
       setFiles(files.filter((file) => file.file_number !== fileNumber)); // Filter by file_number
       alert("File deleted successfully!");
     } catch (error) {
@@ -442,12 +436,9 @@ function AdminPanel() {
 
     try {
       setLoading(true);
-      const response = await axios.get(
-        "http://srv645874.hstgr.cloud:8080/uploads",
-        {
-          params: { design, front_depth, industry },
-        }
-      );
+      const response = await axios.get("http://82.112.227.244:8080/uploads", {
+        params: { design, front_depth, industry },
+      });
       setFiles(response.data.uploads);
     } catch (error) {
       setErrorMessage("Error fetching files.");
@@ -487,7 +478,7 @@ function AdminPanel() {
 
     try {
       const response = await axios.put(
-        `http://srv645874.hstgr.cloud:8080/uploads/${file.file_number}`,
+        `http://82.112.227.244:8080/uploads/${file.file_number}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
